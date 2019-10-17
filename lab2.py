@@ -88,47 +88,39 @@ class TMTable:
                     print("P" + str(count) + ":  N/A") 
                     count += 1
 
-#a = Host('A', 50, 0)
-#b = Host('B', 51, 1)
-##c = Host('C', 52, 2)
-#d = Host('D', 53, 3)
+#### EXAMPLE ####              
+a = Host('A', 50, 0)
+b = Host('B', 51, 1)
+c = Host('C', 52, 2)
+d = Host('D', 53, 3)
 #d_2 = Host('D', 50, 0) # for testing if port changes for a Host
-
-a = Host('A', 20, 3)
-b = Host('B', 21, 7)
-c = Host('C', 22, 5)
 
 fwdtable = FWDTable()
 
 tmtable = TMTable(fwdtable)
 
 print("TIME 1")
-#tmtable.Transmission(a, d) # D -> A
-tmtable.Transmission(c, a)
+tmtable.Transmission(a, d) # D -> A
 print("--------")
 tmtable.printFWDTable()
 
 print("--------")
 print("TIME 2")
-#tmtable.Transmission(d, c) # C -> D
-tmtable.Transmission(c, b)
+tmtable.Transmission(d, c) # C -> D
 print("--------")
 tmtable.printFWDTable()
 
 
 print("--------")
 print("TIME 3")
-#tmtable.Transmission(c, a) # A -> C
-tmtable.Transmission(a, c)
+tmtable.Transmission(c, a) # A -> C
 print("--------")
 tmtable.printFWDTable()
 
 print("--------")
 print("TIME 4")
-#tmtable.Transmission(a, b) # B -> A
-tmtable.Transmission(b, a)
+tmtable.Transmission(a, b) # B -> A
 print("--------")
 tmtable.printFWDTable()
 
 print("--------")
-#tmtable.printFWDTable()
